@@ -13,9 +13,9 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 def voice_input():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
-        recognizer.adjust_for_ambient_noise(source, duration=1)  # ✅ Adjust for background noise
+        recognizer.adjust_for_ambient_noise(source, duration=1)  # Adjust for background noise
         print("Listening... Speak now!")
-        audio = recognizer.listen(source, timeout=5)  # ✅ Add timeout for better response
+        audio = recognizer.listen(source, timeout=3, phrase_time_limit=3)  # ✅ Limit listening to 3 sec
 
     try:
         text = recognizer.recognize_google(audio)
@@ -27,6 +27,8 @@ def voice_input():
     except sr.RequestError as e:
         print(f"Error connecting to Google Speech Recognition: {e}")
         return "Speech recognition service error."
+
+
 
 
 def text_to_speech(text):
