@@ -13,8 +13,9 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 def voice_input():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Listening...")
-        audio = recognizer.listen(source)
+        recognizer.adjust_for_ambient_noise(source, duration=1)  # ✅ Adjust for background noise
+        print("Listening... Speak now!")
+        audio = recognizer.listen(source, timeout=5)  # ✅ Add timeout for better response
 
     try:
         text = recognizer.recognize_google(audio)
@@ -22,10 +23,11 @@ def voice_input():
         return text
     except sr.UnknownValueError:
         print("Sorry, could not understand the audio.")
-        return ""
+        return "I couldn't understand. Please try again."
     except sr.RequestError as e:
-        print(f"Could not request result from Google Speech Recognition service: {e}")
-        return ""
+        print(f"Error connecting to Google Speech Recognition: {e}")
+        return "Speech recognition service error."
+
 
 def text_to_speech(text):
     try:
@@ -36,12 +38,13 @@ def text_to_speech(text):
 
 def llm_model_object(user_text):
     try:
-        model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+        model = genai.GenerativeModel(model_name="gemini-1.5-flash")  # ✅ Using Flash model
         response = model.generate_content(user_text)
         return response.text if response else "No response received."
     except Exception as e:
-        print(f"Error in generating response: {e}")
-        return "An error occurred with the AI model."
+        print(f"AI Model Error: {e}")  # ✅ Print exact error
+        return f"AI Model Error: {e}"  # ✅ Return error for debugging
+
 
 
     

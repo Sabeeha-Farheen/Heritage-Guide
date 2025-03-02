@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.2
 Name: multilingual-assistant
 Version: 0.0.1
 Author: sunny
@@ -10,3 +10,6 @@ Requires-Dist: gTTS
 Requires-Dist: google-generativeai
 Requires-Dist: python-dotenv
 Requires-Dist: streamlit
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
