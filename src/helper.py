@@ -41,7 +41,8 @@ def text_to_speech(text):
 def llm_model_object(user_text):
     try:
         model = genai.GenerativeModel(model_name="gemini-1.5-flash")  # ✅ Using Flash model
-        response = model.generate_content(user_text)
+        prompt = f"You must reply in the language you are spoken to. Here is the user's question:\n\n{user_text}"
+        response = model.generate_content(prompt)
         return response.text if response else "No response received."
     except Exception as e:
         print(f"AI Model Error: {e}")  # ✅ Print exact error
