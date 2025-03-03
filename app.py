@@ -31,7 +31,6 @@ def main():
     text = ""  # Initialize text before using it
 
     with col1:
-        st.image("mic_icon.png", width=100)
         if st.button("🎤 Speak Now"):
             with st.spinner("Listening..."):
                 text = voice_input()
@@ -53,7 +52,6 @@ def main():
                 st.error(f"Error processing response: {str(e)}")
 
     with col2:
-        st.image("travel_map.jpg", use_column_width=True)
         st.markdown("##### Discover landmarks, learn about cultures, and explore destinations like never before!")
 
 if __name__ == '__main__':
