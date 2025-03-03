@@ -50,9 +50,6 @@ def main():
             except Exception as e:
                 st.error(f"Error processing response: {str(e)}")
 
-    with col2:
-        st.markdown("##### Discover landmarks, learn about cultures, and explore destinations like never before!")
-
 if __name__ == '__main__':
     main()
 
