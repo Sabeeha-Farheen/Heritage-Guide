@@ -22,7 +22,7 @@ def voice_input():
 def main():
     # Travel-themed UI
     st.set_page_config(page_title="Travel AI Assistant", layout="wide")
-    st.title("✈️ Explore the World with AI")
+    st.title("✈️ Explore the Tamil Nadu UNESCO sites with AI")
     st.markdown("### Your personal multilingual travel guide!")
 
     col1, col2 = st.columns([1, 2])
