@@ -78,12 +78,12 @@ def display_unesco_sites():
             st.markdown(f"<div class='site-card'><b>{site['name']}</b></div>", unsafe_allow_html=True)
 
 def main():
-    st.title("\ud83c\udfe9 Tamil Nadu Heritage Guide")
+    st.title("🏛️ Tamil Nadu Heritage Guide")
     st.subheader("Discover Tamil Nadu's UNESCO Wonders")
     
     st.markdown("### Ask About Tamil Nadu's Heritage")
     st.markdown('<div class="center-button">', unsafe_allow_html=True)
-    if st.button("\ud83c\udfa7 Tap to Speak"):
+    if st.button("🎧 Tap to Speak"):
         with st.spinner("Listening..."):
             text = voice_input()
             st.success(f"You said: **{text}**")
