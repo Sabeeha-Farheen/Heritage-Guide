@@ -21,7 +21,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.custom-download-button {
+.stButton>button, .custom-download-button {
     background-color: #3B82F6;
     color: white !important;
     border-radius: 8px;
@@ -39,7 +39,7 @@ body {
     text-align: center;
     text-decoration: none !important;
 }
-.custom-download-button:hover {
+.stButton>button:hover, .custom-download-button:hover {
     background-color: #2563EB;
     transform: scale(1.07);
 }
