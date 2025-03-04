@@ -71,7 +71,7 @@ def display_unesco_sites():
         {"name": "Great Living Chola Temples", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/chola tamples.jpeg"},
         {"name": "Gangaikonda Cholapuram Temple", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/gangaikonda-cholapuram.webp"},
         {"name": "Airavatesvara Temple", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/airavatesvara-temple.webp"},
-        {"name": "Mahabalipuram Monuments", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/shore temple.jpg"}
+        {"name": "Mahabalipuram Monuments", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/shore temple.webp"}
     ]
     
     st.markdown("### UNESCO World Heritage Sites in Tamil Nadu")
