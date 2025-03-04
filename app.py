@@ -21,8 +21,8 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.stButton>button {
-    background-color: #3B82F6; /* Lighter bluish */
+.stButton>button, .custom-download-button {
+    background-color: #3B82F6;
     color: white;
     border-radius: 8px;
     padding: 14px 24px;
@@ -30,22 +30,18 @@ body {
     font-size: 16px;
     transition: 0.3s;
     border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
 }
-.stButton>button:hover {
+.stButton>button:hover, .custom-download-button:hover {
     background-color: #2563EB;
     transform: scale(1.07);
-}
-.download-button>button {
-    background-color: #3B82F6 ;
-    color: white ;
-    border-radius: 8px ;
-    padding: 12px 20px ;
-    font-weight: bold ;
-    transition: 0.3s ;
-}
-.download-button>button:hover {
-    background-color: #2563EB ;
-    transform: scale(1.05) ;
 }
 .center-button {
     display: flex;
@@ -117,9 +113,11 @@ def main():
                     st.markdown(f"<div class='site-card' style='padding: 15px;'>{response}</div>", unsafe_allow_html=True)
                     st.audio(audio_bytes, format="audio/mp3")
                     
-                    st.markdown('<div class="download-button">', unsafe_allow_html=True)
-                    st.download_button("Download Audio", data=audio_bytes, file_name="heritage_guide.mp3", mime="audio/mp3")
-                    st.markdown('</div>', unsafe_allow_html=True)
+                    # Custom-styled download button
+                    st.markdown(
+                        f'<a href="data:audio/mp3;base64,{audio_bytes.getvalue().hex()}" download="heritage_guide.mp3" class="custom-download-button">⬇️ Download Audio</a>',
+                        unsafe_allow_html=True
+                    )
     
     st.markdown('</div>', unsafe_allow_html=True)
     display_unesco_sites()
