@@ -43,6 +43,9 @@ body {
     background: #f7f9fc;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
 }
+h1, h3, p, div, span {
+    color: #2C3E50 !important; /* Darker color for better contrast */
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -70,7 +73,7 @@ def display_unesco_sites():
     cols = st.columns(3)
     for i, site in enumerate(sites):
         with cols[i]:
-            st.image(site["image"], use_column_width=True)
+            st.image(site["image"], use_container_width=True)
             st.markdown(f"<div class='site-card'><b>{site['name']}</b></div>", unsafe_allow_html=True)
 
 def main():
