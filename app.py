@@ -103,7 +103,7 @@ def main():
                     st.markdown("### AI Heritage Guide Response")
                     st.markdown(f"<div class='site-card' style='padding: 15px;'>{response}</div>", unsafe_allow_html=True)
                     st.audio(audio_bytes, format="audio/mp3")
-                    st.download_button("Download Audio", data=audio_bytes, file_name="heritage_guide.mp3", mime="audio/mp3")
+                    st.button("Download Audio", data=audio_bytes, file_name="heritage_guide.mp3", mime="audio/mp3")
     st.markdown('</div>', unsafe_allow_html=True)
     
     display_unesco_sites()
