@@ -64,7 +64,7 @@ def voice_input():
 
 def display_unesco_sites():
     sites = [
-        {"name": "Great Living Chola Temples", "image": "chola tamples.jpeg"},
+        {"name": "Great Living Chola Temples", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/chola tamples.jpeg"},
         {"name": "Gangaikonda Cholapuram Temple", "image": "gangaikonda-cholapuram.webp"},
         {"name": "Airavatesvara Temple", "image": "airavatesvara-temple.webp"}
     ]
