@@ -1,6 +1,54 @@
 import streamlit as st
 import speech_recognition as sr
 import io
+
+# Move page configuration to the top of the script
+st.set_page_config(
+    page_title="Tamil Nadu Heritage Explorer", 
+    page_icon="🏛️", 
+    layout="centered"
+)
+
+# Custom CSS for a minimalist, travel-app like design
+st.markdown("""
+<style>
+.main {
+    background-color: white;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+.stApp {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+.stButton>button {
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+.stButton>button:hover {
+    background-color: #34495E;
+    transform: scale(1.05);
+}
+.stTextArea>div>div>textarea {
+    background-color: #F7F9FC;
+    border-radius: 10px;
+    border: 1px solid #E0E4E8;
+}
+.stAlert {
+    border-radius: 10px;
+}
+h1, h3 {
+    color: #2C3E50;
+    text-align: center;
+}
+</style>
+""", unsafe_allow_html=True)
+
 from src.helper import llm_model_object, text_to_speech
 
 def voice_input():
@@ -18,53 +66,6 @@ def voice_input():
         return "Error connecting to speech recognition service."
 
 def main():
-    # Custom CSS for a minimalist, travel-app like design
-    st.markdown("""
-    <style>
-    .main {
-        background-color: white;
-        font-family: 'Inter', 'Helvetica Neue', sans-serif;
-    }
-    .stApp {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: white;
-    }
-    .stButton>button {
-        background-color: #2C3E50;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        padding: 10px 20px;
-        transition: all 0.3s ease;
-    }
-    .stButton>button:hover {
-        background-color: #34495E;
-        transform: scale(1.05);
-    }
-    .stTextArea>div>div>textarea {
-        background-color: #F7F9FC;
-        border-radius: 10px;
-        border: 1px solid #E0E4E8;
-    }
-    .stAlert {
-        border-radius: 10px;
-    }
-    h1, h3 {
-        color: #2C3E50;
-        text-align: center;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    # Page configuration
-    st.set_page_config(
-        page_title="Tamil Nadu Heritage Explorer", 
-        page_icon="🏛️", 
-        layout="centered"
-    )
-
     # Main content
     st.markdown("<h1>🏛️ Tamil Nadu Heritage Guide</h1>", unsafe_allow_html=True)
     st.markdown("<h3>Discover UNESCO Wonders Through AI</h3>", unsafe_allow_html=True)
