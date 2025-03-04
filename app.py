@@ -35,19 +35,17 @@ body {
     background-color: #2563EB;
     transform: scale(1.07);
 }
-.stButton>download_button {
-    background-color: #3B82F6; /* Lighter bluish */
-    color: white;
-    border-radius: 8px;
-    padding: 14px 24px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s;
-    border: none;
+.download-button>button {
+    background-color: #3B82F6 ;
+    color: white ;
+    border-radius: 8px ;
+    padding: 12px 20px ;
+    font-weight: bold ;
+    transition: 0.3s ;
 }
-.stButton>download_button:hover {
-    background-color: #2563EB;
-    transform: scale(1.07);
+.download-button>button:hover {
+    background-color: #2563EB ;
+    transform: scale(1.05) ;
 }
 .center-button {
     display: flex;
@@ -89,9 +87,9 @@ def display_unesco_sites():
     ]
     
     st.markdown("### UNESCO World Heritage Sites in Tamil Nadu")
-    cols = st.columns(4)  # Now 4 columns
+    cols = st.columns(4)  # 4-column grid
     for i, site in enumerate(sites):
-        with cols[i % 4]:  # Ensures a proper grid
+        with cols[i % 4]:
             st.image(site["image"], use_container_width=True)
             st.markdown(f"<div class='site-card'>{site['name']}</div>", unsafe_allow_html=True)
 
@@ -101,6 +99,7 @@ def main():
     
     st.markdown("### Ask About Tamil Nadu's Heritage")
     st.markdown('<div class="center-button">', unsafe_allow_html=True)
+    
     if st.button("🎧 Tap to Speak"):
         with st.spinner("Listening..."):
             text = voice_input()
@@ -117,9 +116,12 @@ def main():
                     st.markdown("### AI Heritage Guide Response")
                     st.markdown(f"<div class='site-card' style='padding: 15px;'>{response}</div>", unsafe_allow_html=True)
                     st.audio(audio_bytes, format="audio/mp3")
+                    
+                    st.markdown('<div class="download-button">', unsafe_allow_html=True)
                     st.download_button("Download Audio", data=audio_bytes, file_name="heritage_guide.mp3", mime="audio/mp3")
-    st.markdown('</div>', unsafe_allow_html=True)
+                    st.markdown('</div>', unsafe_allow_html=True)
     
+    st.markdown('</div>', unsafe_allow_html=True)
     display_unesco_sites()
 
 if __name__ == '__main__':
