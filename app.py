@@ -65,8 +65,8 @@ def voice_input():
 def display_unesco_sites():
     sites = [
         {"name": "Great Living Chola Temples", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/chola tamples.jpeg"},
-        {"name": "Gangaikonda Cholapuram Temple", "image": "gangaikonda-cholapuram.webp"},
-        {"name": "Airavatesvara Temple", "image": "airavatesvara-temple.webp"}
+        {"name": "Gangaikonda Cholapuram Temple", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/gangaikonda-cholapuram.webp"},
+        {"name": "Airavatesvara Temple", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/airavatesvara-temple.webp"}
     ]
     
     st.markdown("### UNESCO World Heritage Sites in Tamil Nadu")
