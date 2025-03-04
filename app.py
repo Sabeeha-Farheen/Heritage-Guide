@@ -35,6 +35,20 @@ body {
     background-color: #2563EB;
     transform: scale(1.07);
 }
+.stButton>download_button {
+    background-color: #3B82F6; /* Lighter bluish */
+    color: white;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    border: none;
+}
+.stButton>download_button:hover {
+    background-color: #2563EB;
+    transform: scale(1.07);
+}
 .center-button {
     display: flex;
     justify-content: center;
@@ -103,7 +117,7 @@ def main():
                     st.markdown("### AI Heritage Guide Response")
                     st.markdown(f"<div class='site-card' style='padding: 15px;'>{response}</div>", unsafe_allow_html=True)
                     st.audio(audio_bytes, format="audio/mp3")
-                    st.button("Download Audio", data=audio_bytes, file_name="heritage_guide.mp3", mime="audio/mp3")
+                    st.download_button("Download Audio", data=audio_bytes, file_name="heritage_guide.mp3", mime="audio/mp3")
     st.markdown('</div>', unsafe_allow_html=True)
     
     display_unesco_sites()
