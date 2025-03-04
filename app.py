@@ -23,7 +23,7 @@ body {
 }
 .stButton>button {
     background-color: #2C3E50;
-    color: white !important;
+    color: white;
     border-radius: 8px;
     padding: 12px 20px;
     transition: 0.3s;
@@ -45,7 +45,7 @@ body {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
 }
 h1, h3, p, div, span {
-    color: #2C3E50 !important;
+    color: #2C3E50;
 }
 </style>
 """, unsafe_allow_html=True)
