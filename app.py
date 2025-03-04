@@ -64,9 +64,9 @@ def voice_input():
 
 def display_unesco_sites():
     sites = [
-        {"name": "Great Living Chola Temples", "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Brihadisvara_Temple%2C_Thanjavur.jpg"},
-        {"name": "Gangaikonda Cholapuram Temple", "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Gangaikonda_Cholapuram_Temple.jpg"},
-        {"name": "Airavatesvara Temple", "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Airavatesvara_Temple_Darasuram.jpg"}
+        {"name": "Great Living Chola Temples", "image": "chola tamples.jpeg"},
+        {"name": "Gangaikonda Cholapuram Temple", "image": "gangaikonda-cholapuram.webp"},
+        {"name": "Airavatesvara Temple", "image": "airavatesvara-temple.webp"}
     ]
     
     st.markdown("### UNESCO World Heritage Sites in Tamil Nadu")
