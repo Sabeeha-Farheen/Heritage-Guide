@@ -4,7 +4,7 @@ import io
 from src.helper import llm_model_object, text_to_speech
 
 # Set up page
-st.set_page_config(page_title="Tamil Nadu Heritage Explorer", page_icon="🏩", layout="wide")
+st.set_page_config(page_title="Tamil Nadu Heritage Explorer", page_icon="🏛️", layout="wide")
 
 # Apply minimalistic CSS
 st.markdown("""
@@ -14,7 +14,7 @@ body {
     background-color: #f8f9fa;
 }
 .stApp {
-    max-width: 900px;
+    max-width: 1100px;
     margin: auto;
     padding: 20px;
     background: white;
@@ -22,16 +22,18 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .stButton>button {
-    background-color: #2C3E50;
+    background-color: #3B82F6; /* Lighter bluish */
     color: white;
     border-radius: 8px;
-    padding: 12px 20px;
-    transition: 0.3s;
+    padding: 14px 24px;
     font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    border: none;
 }
 .stButton>button:hover {
-    background-color: #1F2C3C;
-    transform: scale(1.05);
+    background-color: #2563EB;
+    transform: scale(1.07);
 }
 .center-button {
     display: flex;
@@ -39,10 +41,11 @@ body {
 }
 .site-card {
     text-align: center;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 10px;
     background: #f7f9fc;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+    font-weight: bold;
 }
 h1, h3, p, div, span {
     color: #2C3E50;
@@ -67,15 +70,16 @@ def display_unesco_sites():
     sites = [
         {"name": "Great Living Chola Temples", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/chola tamples.jpeg"},
         {"name": "Gangaikonda Cholapuram Temple", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/gangaikonda-cholapuram.webp"},
-        {"name": "Airavatesvara Temple", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/airavatesvara-temple.webp"}
+        {"name": "Airavatesvara Temple", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/airavatesvara-temple.webp"},
+        {"name": "Mahabalipuram Monuments", "image": "C:/Users/Sabeeha Farheen/OneDrive/Desktop/img/mahabalipuram.jpg"}
     ]
     
     st.markdown("### UNESCO World Heritage Sites in Tamil Nadu")
-    cols = st.columns(3)
+    cols = st.columns(4)  # Now 4 columns
     for i, site in enumerate(sites):
-        with cols[i]:
-            st.image(site["image"], width=250, use_container_width=False)
-            st.markdown(f"<div class='site-card'><b>{site['name']}</b></div>", unsafe_allow_html=True)
+        with cols[i % 4]:  # Ensures a proper grid
+            st.image(site["image"], use_container_width=True)
+            st.markdown(f"<div class='site-card'>{site['name']}</div>", unsafe_allow_html=True)
 
 def main():
     st.title("🏛️ Tamil Nadu Heritage Guide")
