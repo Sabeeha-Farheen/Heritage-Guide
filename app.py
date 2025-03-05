@@ -66,13 +66,13 @@ h1, h3, p, div, span {
 def voice_input():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
-        st.info("Listening... Speak now!")
+        st.info("Ask me ")
         audio = recognizer.listen(source)
     
     try:
         return recognizer.recognize_google(audio)
     except sr.UnknownValueError:
-        return "Sorry, I couldn't understand."
+        return "Sorry, I cant understand."
     except sr.RequestError:
         return "Speech recognition service error."
 
