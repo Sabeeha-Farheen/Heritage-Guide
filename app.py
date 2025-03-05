@@ -92,7 +92,7 @@ def display_unesco_sites():
             st.markdown(f"<div class='site-card'>{site['name']}</div>", unsafe_allow_html=True)
 
 def main():
-    st.title("🏛️ Tamil Nadu Heritage Guide")
+    st.title(" Tamil Nadu Heritage Guide")
     st.subheader("Discover Tamil Nadu's UNESCO Wonders")
     
     st.markdown("### Ask About Tamil Nadu's Heritage")
